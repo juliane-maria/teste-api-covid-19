@@ -43,7 +43,7 @@ class CardIndWidget extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: color.withOpacity(0.9),
                 ),

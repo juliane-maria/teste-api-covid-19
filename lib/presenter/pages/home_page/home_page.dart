@@ -1,15 +1,13 @@
-import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
-
 import 'package:fl_chart/fl_chart.dart';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:teste_covid_api/widgets/card_ind_widget.dart';
-import 'package:teste_covid_api/widgets/dropdown_data_widget.dart';
-import 'package:teste_covid_api/widgets/line_chart_widget.dart';
-import 'package:teste_covid_api/widgets/subtitle_grey_widget.dart';
-import 'package:teste_covid_api/widgets/tabBar_widget.dart';
-import 'package:teste_covid_api/widgets/title_azul_widget.dart';
+
+import 'home_state.dart';
+import 'widgets/card_ind_widget.dart';
+import 'widgets/dropdown_data_widget.dart';
+import 'widgets/line_chart_widget.dart';
+import 'widgets/subtitle_grey_widget.dart';
+import 'widgets/tabBar_widget.dart';
+import 'widgets/title_azul_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +17,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late HomeState homeState;
+  @override
+  void initState() {
+    homeState = HomeState(homePage: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,22 +70,48 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 0, left: 14.0, right: 0),
+                  padding: const EdgeInsets.only(
+                    left: 14.0,
+                  ),
                   child: DropdownButton<dynamic>(
-                      items: const [
-                        DropdownMenuItem(
-                          child: Text(
-                            'Indonésia',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 15, 44, 68),
+                    menuMaxHeight: 350,
+                    items: homeState.isLoaded == 1
+                        ? homeState.countries.entries
+                            .map(
+                              (e) => DropdownMenuItem(
+                                value: e.key,
+                                child: Text(
+                                  e.key,
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 15, 44, 68),
+                                  ),
+                                ),
+                              ),
+                            )
+                            .toList()
+                        : [
+                            DropdownMenuItem(
+                              value: 'Loading',
+                              child: Text(
+                                'Loading',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 15, 44, 68),
+                                ),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
-                      onChanged: (value) {},
-                      icon: const Icon(Icons.keyboard_arrow_down)),
+                          ],
+                    onChanged: (value) {
+                      homeState.valueSelected = value;
+                      homeState.setCardsData();
+                      setState(() {});
+                    },
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    value: homeState.valueSelected,
+                  ),
                 ),
               ],
             ),
@@ -102,21 +133,24 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 40, bottom: 15),
+                                  const EdgeInsets.only(top: 40, bottom: 10),
                               child: Text(
                                 "Self Check-Up Covid-19",
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 24,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(right: 35),
                               child: Text(
-                                "Contain severed list of questions to check your physical condition.",
+                                "Contain severed list of questions to check\n"
+                                "your physical condition.",
                                 style: TextStyle(
-                                    fontSize: 10, color: Colors.white),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
                               ),
                             ),
                           ],
@@ -167,19 +201,19 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 CardIndWidget(
-                  title: '750',
+                  title: homeState.infecteds.toString(),
                   subTitle: 'infected',
                   color: Colors.orange,
                   icon: Icons.add,
                 ),
                 CardIndWidget(
-                  title: '31',
+                  title: homeState.recovereds.toString(),
                   subTitle: 'recovered',
                   color: Colors.green,
                   icon: Icons.favorite,
                 ),
                 CardIndWidget(
-                  title: '58',
+                  title: homeState.deaths.toString(),
                   subTitle: 'death',
                   color: Colors.red,
                   icon: Icons.close,
