@@ -123,10 +123,10 @@ Flutter 3.1.0‑9.0.pre
 ![front](https://user-images.githubusercontent.com/73200962/174877197-d3ffabb3-135c-49fe-b298-b754e4db5a52.jpeg )
 
 
-![dropdown](https://user-images.githubusercontent.com/73200962/174880635-80e04d1d-4080-4387-856d-4a4c46f7327f.jpg,)
+![dropdown](https://user-images.githubusercontent.com/73200962/174880635-80e04d1d-4080-4387-856d-4a4c46f7327f.jpeg)
 
 
-![weekly](https://user-images.githubusercontent.com/73200962/174880661-e7df7c39-b274-45a9-840b-22fd4e8070b8.jpg)
+![weekly](https://user-images.githubusercontent.com/73200962/174880661-e7df7c39-b274-45a9-840b-22fd4e8070b8.jpeg)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
