@@ -64,7 +64,8 @@
 
 ![front](https://user-images.githubusercontent.com/73200962/174877197-d3ffabb3-135c-49fe-b298-b754e4db5a52.jpeg )
 
-The principle is a project designed to inform the population about the cases of Covid-19 in each country, among the cases, the numbers of infected people, in recovery and also the survey of deaths.
+This is a project aimed at informing the population about the cases of Covid-19 in each country, among the cases, the number of infected people, recovering and also the survey of deaths.
+
 
 
 
