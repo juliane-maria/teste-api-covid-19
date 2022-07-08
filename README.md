@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![front](https://user-images.githubusercontent.com/73200962/174877197-d3ffabb3-135c-49fe-b298-b754e4db5a52.jpeg )
+
 
 This is a project aimed at informing the population about the cases of Covid-19 in each country, among the cases, the number of infected people, recovering and also the survey of deaths.
 
@@ -121,13 +121,21 @@ Flutter 3.1.0‑9.0.pre
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![front](https://user-images.githubusercontent.com/73200962/174877197-d3ffabb3-135c-49fe-b298-b754e4db5a52.jpeg )
 
 
-![dropdown](https://user-images.githubusercontent.com/73200962/174880635-80e04d1d-4080-4387-856d-4a4c46f7327f.jpeg)
+
+<div>
+<img src="https://user-images.githubusercontent.com/73200962/178010022-c85d0b98-292c-4004-932b-3417915f2766.png" width="200">
+<img src="https://user-images.githubusercontent.com/73200962/178010212-5c6f07ec-c4a9-43a0-a27d-339e32508f3a.png" width="200">
+<img src="https://user-images.githubusercontent.com/73200962/178010227-5fb2147f-c2b3-4d55-beeb-3e73120982a1.png" width="200">
+<img src="https://user-images.githubusercontent.com/73200962/178010235-bf7b46c7-3886-4401-8f59-f257244c99a9.png" width="200">
 
 
-![weekly](https://user-images.githubusercontent.com/73200962/174880661-e7df7c39-b274-45a9-840b-22fd4e8070b8.jpeg)
+
+  
+
+
+</div>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -167,23 +175,9 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- CONTACT -->
-## Contact
-
-Juliane Maria  - [julianesousa758@gmail.com](julianesousa758@gmail.com) 
-
-Project Link: [https://github.com/juliane-maria/teste-api-covid-19.git](https://github.com/juliane-maria/teste-api-covid-19.git)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
